@@ -27,6 +27,8 @@ locals {
 resource "aws_eks_cluster" "this" {
   count = local.create ? 1 : 0
 
+  bootstrap_self_managed_addons = var.bootstrap_self_managed_addons
+
   name                      = var.cluster_name
   role_arn                  = local.cluster_role
   version                   = var.cluster_version

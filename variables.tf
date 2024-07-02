@@ -26,6 +26,11 @@ variable "cluster_name" {
   default     = ""
 }
 
+variable "bootstrap_self_managed_addons" {
+  type = bool
+  default = true
+}
+
 variable "cluster_version" {
   description = "Kubernetes `<major>.<minor>` version to use for the EKS cluster (i.e.: `1.27`)"
   type        = string
